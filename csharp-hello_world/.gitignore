@@ -1,1 +1,5 @@
-*/
+bin
+obj
+create_project.sh
+create_build_run_project.sh
+run_project.sh
