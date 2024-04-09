@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace _2_print_alphabet
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("abcdefghijklmnopqrstuvwxyz");
-        }
+        for (char c = 'a'; c <= 'z'; c++)
+            Console.Write(c);
+        Console.WriteLine();
     }
 }
