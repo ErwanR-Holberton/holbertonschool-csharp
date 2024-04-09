@@ -6,6 +6,5 @@ class Program
     {
         for (char c = 'a'; c <= 'z'; c++)
             Console.Write(c);
-        Console.WriteLine();
     }
 }
