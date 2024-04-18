@@ -15,7 +15,7 @@ class MyStack
         else
             Console.WriteLine("Top item: " + aStack.Peek());
 
-        Console.WriteLine("Stack contains " + search + ": " + search_result);
+        Console.WriteLine("Stack contains \"" + search + "\": " + search_result);
 
         if (search_result)
         {
