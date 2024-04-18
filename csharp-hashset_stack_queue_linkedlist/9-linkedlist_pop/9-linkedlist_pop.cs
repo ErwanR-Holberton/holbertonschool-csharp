@@ -9,6 +9,6 @@ class LList
             return 0;
         int result = myLList.First.Value;
         myLList.RemoveFirst();
-        return myLList.First.Value;
+        return result;
     }
 }
