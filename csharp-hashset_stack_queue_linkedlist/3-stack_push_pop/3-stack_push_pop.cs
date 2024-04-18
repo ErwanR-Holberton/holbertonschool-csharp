@@ -5,15 +5,8 @@ class MyStack
 {
     public static Stack<string> Info(Stack<string> aStack, string newItem, string search)
     {
-        int sum = 0;
-        bool search_result = false;
-
-        foreach (string item in aStack)
-        {
-            sum++;
-            if (item == search)
-                search_result = true;
-        }
+        int sum = aStack.Count;
+        bool search_result = aStack.Contains(search);
 
         Console.WriteLine("Number of items: " + sum);
 
