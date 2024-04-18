@@ -23,6 +23,17 @@ class MyStack
             Console.WriteLine("Top item: " + aStack.Peek());
 
         Console.WriteLine("Stack contains " + search + ": " + search_result);
+
+        if (search_result)
+        {
+            string temp = "";
+
+            while (temp != search)
+                temp = aStack.Pop();
+        }
+
+        aStack.Push(newItem);
+
         return aStack;
     }
 }
