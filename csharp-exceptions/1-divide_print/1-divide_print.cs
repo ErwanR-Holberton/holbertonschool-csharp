@@ -11,6 +11,8 @@ class Int
         catch {
             Console.WriteLine("Cannot divide by zero");
         }
-        Console.WriteLine("{0} / {1} = {2}", a, b, result);
+        finally {
+            Console.WriteLine("{0} / {1} = {2}", a, b, result);
+        }
     }
 }
