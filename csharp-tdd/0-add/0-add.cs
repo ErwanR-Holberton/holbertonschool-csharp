@@ -1,5 +1,8 @@
 ﻿using System;
 
+/// <summary>
+/// The name of the person.
+/// </summary>
 namespace MyMath
 {
     /// <summary>
@@ -7,6 +10,9 @@ namespace MyMath
     /// </summary>
     class Operations
     {
+        /// <summary>
+        /// The name of the person.
+        /// </summary>
         public static int Add(int a, int b)
         {
             return a + b;
