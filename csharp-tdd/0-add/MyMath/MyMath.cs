@@ -6,12 +6,16 @@
 namespace MyMath
 {
     /// <summary>
-    /// The name of the person.
+    /// This is a class that represents a person.
     /// </summary>
-    public class Class1
+    public class Operations
     {
         /// <summary>
         /// The name of the person.
         /// </summary>
+        public static int Add(int a, int b)
+        {
+            return a + b;
+        }
     }
 }
