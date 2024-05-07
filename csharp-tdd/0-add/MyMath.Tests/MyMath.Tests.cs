@@ -1,13 +1,8 @@
 using NUnit.Framework;
 
-/// <summary>
-/// The name of the person.
-/// </summary>
 namespace MyMath.Tests
 {
-    /// <summary>
-    /// The name of the person.
-    /// </summary>
+    [TestFixture]
     public class OperationsTests
     {
 
