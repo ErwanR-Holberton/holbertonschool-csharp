@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace Tests
+namespace MyMath.Tests
 {
     public class Tests
     {
@@ -10,9 +10,24 @@ namespace Tests
         }
 
         [Test]
-        public void Test1()
+        public void Add_WhenGivenTwoPositiveIntegers_ReturnsCorrectSum()
         {
-            Assert.Pass();
+            int result = Operations.Add(3, 5);
+            Assert.AreEqual(8, result);
+        }
+
+        [Test]
+        public void Add_WhenGivenNegativeAndPositiveIntegers_ReturnsCorrectSum()
+        {
+            int result = Operations.Add(-3, 5);
+            Assert.AreEqual(2, result);
+        }
+
+        [Test]
+        public void Add_WhenGivenTwoNegativeIntegers_ReturnsCorrectSum()
+        {
+            int result = Operations.Add(-3, -5);
+            Assert.AreEqual(-8, result);
         }
     }
 }
