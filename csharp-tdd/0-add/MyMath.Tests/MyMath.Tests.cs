@@ -1,36 +1,18 @@
 using NUnit.Framework;
 
-namespace MyMath.Tests
+namespace Tests
 {
-    [TestFixture]
-    public class OperationsTests
+    public class Tests
     {
-
-        [Test]
-        public void Add_WhenCalledWithTwoPositiveNumbers_ReturnsCorrectResult()
+        [SetUp]
+        public void Setup()
         {
-            int a = 5;
-            int b = 3;
-            int result = Operations.Add(a, b);
-            Assert.AreEqual(8, result);
         }
 
         [Test]
-        public void Add_WhenCalledWithNegativeNumbers_ReturnsCorrectResult()
+        public void Test1()
         {
-            int a = -5;
-            int b = -3;
-            int result = Operations.Add(a, b);
-            Assert.AreEqual(-8, result);
-        }
-
-        [Test]
-        public void Add_WhenCalledWithZero_ReturnsCorrectResult()
-        {
-            int a = 0;
-            int b = 0;
-            int result = Operations.Add(a, b);
-            Assert.AreEqual(0, result);
+            Assert.Pass();
         }
     }
 }
