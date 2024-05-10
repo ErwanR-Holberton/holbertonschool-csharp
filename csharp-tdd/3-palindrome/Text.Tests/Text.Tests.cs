@@ -32,5 +32,19 @@ namespace Text.Tests
             bool result = Str.IsPalindrome(s1);
             Assert.AreEqual(false, result);
         }
+        [Test]
+        public void Test5()
+        {
+            string s1 = "a";
+            bool result = Str.IsPalindrome(s1);
+            Assert.AreEqual(true, result);
+        }
+        [Test]
+        public void Test6()
+        {
+            string s1 = "";
+            bool result = Str.IsPalindrome(s1);
+            Assert.AreEqual(true, result);
+        }
     }
 }
