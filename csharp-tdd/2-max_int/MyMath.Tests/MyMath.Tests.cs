@@ -19,5 +19,13 @@ namespace MyMath.Tests
             int result = Operations.Max(list1);
             Assert.AreEqual(0, result);
         }
+
+        [Test]
+        public void max_negative()
+        {
+            List<int> list1 = new List<int> { -1, -2, -3, -4, -5};
+            int result = Operations.Max(list1);
+            Assert.AreEqual(-1, result);
+        }
     }
 }
