@@ -27,5 +27,12 @@ namespace MyMath.Tests
             int result = Operations.Max(list1);
             Assert.AreEqual(-1, result);
         }
+                [Test]
+        public void max_one()
+        {
+            List<int> list1 = new List<int> {13};
+            int result = Operations.Max(list1);
+            Assert.AreEqual(13, result);
+        }
     }
 }
