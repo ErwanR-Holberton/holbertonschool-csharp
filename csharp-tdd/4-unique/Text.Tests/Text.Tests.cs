@@ -32,5 +32,19 @@ namespace Text.Tests
             int result = Str.UniqueChar(s1);
             Assert.AreEqual(0, result);
         }
+        [Test]
+        public void Test5()
+        {
+            string s1 = "t";
+            int result = Str.UniqueChar(s1);
+            Assert.AreEqual(0, result);
+        }
+        [Test]
+        public void Test6()
+        {
+            string s1 = "aazzeer";
+            int result = Str.UniqueChar(s1);
+            Assert.AreEqual(6, result);
+        }
     }
 }
