@@ -8,10 +8,10 @@ class VectorMath
             return -1;
 
         int sum = 0;
-        
+
         foreach (double value in vector)
             sum += value * value;
 
-        return Math.Sqrt(value);
+        return Math.Round(Math.Sqrt(value), 2);
     }
 }
