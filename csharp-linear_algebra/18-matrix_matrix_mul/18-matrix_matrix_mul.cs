@@ -8,7 +8,7 @@ class MatrixMath
         int cols = matrix1.GetLength(1);
         int colsB = matrix2.GetLength(1);
 
-        if (cols != matrix2.GetLength(0) || rows != colsB)
+        if (cols != matrix2.GetLength(0))
             return new double[,] {{-1}};
 
         double[,] result = new double[rows, colsB];
