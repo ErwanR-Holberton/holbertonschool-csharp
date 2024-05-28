@@ -9,19 +9,36 @@ class MatrixMath
 
         double cos = Math.Cos(angle);
         double sin = Math.Sin(angle);
+        double[,] rotM;
 
-        double[,] rotM = new double[,] {
-            { cos, -sin },
-            { sin, cos } };
+        if (angle >= 0)
+            rotM = new double[,] {{ cos, -sin },{ sin, cos } };
+        else
+            rotM = new double[,] {{ cos, sin },{ -sin, cos } };
 
-        double[,] result = new double[,] {
-            {rotM[0,0] * matrix[0,0] + rotM[0,1] * matrix[0,1], rotM[1,0] * matrix[0,0] + rotM[1,1] * matrix[0,1]},
-            {rotM[0,0] * matrix[1,0] + rotM[0,1] * matrix[1,1], rotM[1,0] * matrix[1,0] + rotM[1,1] * matrix[1,1]}};
+        return Multiply(matrix, rotM);
+    }
 
+    public static double[,] Multiply(double[,] matrix1, double[,] matrix2)
+    {
+        int rows = matrix1.GetLength(0);
+        int cols = matrix1.GetLength(1);
+        int colsB = matrix2.GetLength(1);
+
+        if (cols != matrix2.GetLength(0))
+            return new double[,] {{-1}};
+
+        double[,] result = new double[rows, colsB];
+
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < colsB; j++)
+            {
+                result[i, j] = 0;
+                for (int k = 0; k < cols; k++)
+                    result[i, j] += matrix1[i, k] * matrix2[k, j];
+            }
 
         return result;
+
     }
 }
-
-
-
