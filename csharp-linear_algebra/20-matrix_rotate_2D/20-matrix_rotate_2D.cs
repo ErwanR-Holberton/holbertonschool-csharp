@@ -11,7 +11,7 @@ class MatrixMath
         double sin = Math.Sin(angle);
         double[,] rotM;
 
-        rotM = new double[,] {{ cos, -sin },{ sin, cos } };
+        rotM = new double[,] {{ cos, sin },{ -sin, cos } };
 
         return Multiply(matrix, rotM);
     }
