@@ -6,8 +6,7 @@ class MatrixMath
     {
 
         int rows = matrix.GetLength(0);
-        int cols = matrix.GetLength(1);
-        if (!(rows == 2 && cols == 2) || (rows == 3 && cols == 3))
+        if (!MatrixCheck(matrix))
             return -1;
 
         if (rows == 2)
@@ -24,5 +23,12 @@ class MatrixMath
         h = matrix[2,1];
         i = matrix[2,2];
         return a*(e*i - f*h)- b*(d*i- f*g) + c*(d*h- e*g);
+    }
+
+    private static bool MatrixCheck(double[,] matrix)
+    {
+        int rows = matrix.GetLength(0);
+        int cols = matrix.GetLength(1);
+        return (rows == 2 && cols == 2) || (rows == 3 && cols == 3);
     }
 }
