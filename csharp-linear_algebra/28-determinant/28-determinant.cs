@@ -10,7 +10,7 @@ class MatrixMath
             return -1;
 
         if (rows == 2)
-            return matrix[0,0] * matrix[1,1] - matrix[1,0] * matrix[0,1];
+            return Math.Round(matrix[0,0] * matrix[1,1] - matrix[1,0] * matrix[0,1], 2);
 
         double a, b, c, d, e, f, g, h, i;
         a = matrix[0,0];
@@ -22,7 +22,7 @@ class MatrixMath
         g = matrix[2,0];
         h = matrix[2,1];
         i = matrix[2,2];
-        return a*(e*i - f*h)- b*(d*i- f*g) + c*(d*h- e*g);
+        return Math.Round(a*(e*i - f*h)- b*(d*i- f*g) + c*(d*h- e*g), 2);
     }
 
     private static bool MatrixCheck(double[,] matrix)
