@@ -33,6 +33,7 @@ class MatrixMath
                 result[i, j] = 0;
                 for (int k = 0; k < cols; k++)
                     result[i, j] += matrix1[i, k] * matrix2[k, j];
+                result[i, j] = Math.Round(result[i, j], 2);
             }
 
         return result;
