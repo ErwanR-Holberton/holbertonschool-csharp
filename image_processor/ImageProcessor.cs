@@ -14,18 +14,18 @@ class ImageProcessor
     {
         Parallel.ForEach(filenames, file_name =>
         {
-            using (Bitmap bitmap = new Bitmap(file_name))
+            Bitmap bitmap = new Bitmap(file_name);
+
+            for (int y = 0; y < bitmap.Height; y++)
             {
-                for (int y = 0; y < bitmap.Height; y++)
+                for (int x = 0; x < bitmap.Width; x++)
                 {
-                    for (int x = 0; x < bitmap.Width; x++)
-                    {
-                        Color pixelColor = bitmap.GetPixel(x, y);
-                        bitmap.SetPixel(x, y, Color.FromArgb(255 - pixelColor.R, 255 - pixelColor.G, 255 - pixelColor.B));
-                    }
+                    Color pixelColor = bitmap.GetPixel(x, y);
+                    bitmap.SetPixel(x, y, Color.FromArgb(255 - pixelColor.R, 255 - pixelColor.G, 255 - pixelColor.B));
                 }
-                bitmap.Save(file_name.Split(".")[0] + "_inverted.png");
             }
+            string[] slip = file_name.Split(".");
+            bitmap.Save(slip[0] + "_inverse." + slip[1]);
         });
     }
 }
