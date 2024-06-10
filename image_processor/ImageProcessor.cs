@@ -5,11 +5,6 @@ using System.Threading.Tasks;
 
 class ImageProcessor
 {
-    public static void Main()
-    {
-        string[] files = { "image.png", "image2.png" };
-        Inverse(files);
-    }
     public static void Inverse(string[] filenames)
     {
         Parallel.ForEach(filenames, file_name =>
