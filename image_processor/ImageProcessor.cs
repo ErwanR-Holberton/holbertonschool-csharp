@@ -11,19 +11,16 @@ class ImageProcessor
         {
             Bitmap bitmap = new Bitmap(file_name);
 
-            BitmapData lockedimage = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, bitmap.PixelFormat);
-            int img_size = lockedimage.Stride * lockedimage.Height;
-            byte[] image_copy = new byte[img_size];
+            for (int y = 0; y < bitmap.Height; y++)
+            {
+                for (int x = 0; x < bitmap.Width; x++)
+                {
+                    Color pixelColor = bitmap.GetPixel(x, y);
+                    bitmap.SetPixel(x, y, Color.FromArgb(255 - pixelColor.R, 255 - pixelColor.G, 255 - pixelColor.B));
+                }
+            }
 
-            System.Runtime.InteropServices.Marshal.Copy(lockedimage.Scan0, image_copy, 0, img_size);
-
-            for (int i = 0; i < img_size; i++)
-                image_copy[i] = (byte)(255 - image_copy[i]);
-
-            System.Runtime.InteropServices.Marshal.Copy(image_copy, 0, lockedimage.Scan0, img_size);
-            bitmap.UnlockBits(lockedimage);
-
-            string[] slip = file_name.Split(new char[] { '/', '.' });;
+            string[] slip = file_name.Split(new char[] { '/', '.' });
             bitmap.Save(slip[slip.Length - 2] + "_inverse." + slip[slip.Length - 1]);
         });
     }
