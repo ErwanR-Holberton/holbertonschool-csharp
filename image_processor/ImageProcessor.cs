@@ -23,8 +23,8 @@ class ImageProcessor
             System.Runtime.InteropServices.Marshal.Copy(image_copy, 0, lockedimage.Scan0, img_size);
             bitmap.UnlockBits(lockedimage);
 
-            string[] slip = file_name.Split(".");
-            bitmap.Save(slip[0] + "_inverse." + slip[1]);
+            string[] slip = file_name.Split(new char[] { '/', '.' });;
+            bitmap.Save(slip[slip.Length - 2] + "_inverse." + slip[slip.Length - 1]);
         });
     }
 }
