@@ -26,4 +26,24 @@ class ImageProcessor
             bitmap.Save(slip[slip.Length - 2] + "_inverse." + slip[slip.Length - 1]);
         });
     }
+    public static void Grayscale(string[] filenames)
+    {
+        foreach (var file_name in filenames)
+        {
+            Bitmap bitmap = new Bitmap(file_name);
+
+            for (int y = 0; y < bitmap.Height; y++)
+            {
+                for (int x = 0; x < bitmap.Width; x++)
+                {
+                    Color pixelColor = bitmap.GetPixel(x, y);
+                    int grey = (pixelColor.R + pixelColor.G + pixelColor.B) / 3;
+                    bitmap.SetPixel(x, y, Color.FromArgb(grey, grey, grey));
+                }
+            }
+
+            string[] slip = file_name.Split(new char[] { '/', '.' });
+            bitmap.Save(slip[slip.Length - 2] + "_grayscale." + slip[slip.Length - 1]);
+        }
+    }
 }
