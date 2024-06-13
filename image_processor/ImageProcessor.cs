@@ -8,11 +8,16 @@ class ImageProcessor
 {
     public static void Inverse(string[] filenames)
     {
-        Parallel.ForEach(filenames, file_name =>
+        var tasks = new Task[filenames.Length];
+
+        for (int i = 0; i < filenames.Length; i++)
         {
-            Thread thread = new Thread(() => ProcessImageThread(file_name));
-            thread.Start();
-        });
+            string file_name = filenames[i];
+            tasks[i] = Task.Run(() => ProcessImageThread(file_name));
+        }
+
+        Task.WaitAll(tasks);
+
     }
     private static void ProcessImageThread(string file_name)
     {
