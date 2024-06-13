@@ -46,4 +46,27 @@ class ImageProcessor
             bitmap.Save(slip[slip.Length - 2] + "_grayscale." + slip[slip.Length - 1]);
         }
     }
+    public static void BlackWhite(string[] filenames, double threshold)
+    {
+        Parallel.ForEach(filenames, file_name =>
+        {
+            Bitmap bitmap = new Bitmap(file_name);
+
+            for (int y = 0; y < bitmap.Height; y++)
+            {
+                for (int x = 0; x < bitmap.Width; x++)
+                {
+                    Color pixelColor = bitmap.GetPixel(x, y);
+                    double grey = (pixelColor.R + pixelColor.G + pixelColor.B) / 3;
+                    if (grey > threshold)
+                        bitmap.SetPixel(x, y, Color.FromArgb(255, 255, 255));
+                    else
+                        bitmap.SetPixel(x, y, Color.FromArgb(0, 0, 0));
+                }
+            }
+
+            string[] slip = file_name.Split(new char[] { '/', '.' });
+            bitmap.Save(slip[slip.Length - 2] + "_bw." + slip[slip.Length - 1]);
+        });
+    }
 }
