@@ -23,8 +23,7 @@ class ImageProcessor
             for (int x = 0; x < bitmap.Width; x++)
             {
                 Color pixelColor = bitmap.GetPixel(x, y);
-                int grey = (pixelColor.R + pixelColor.G + pixelColor.B) / 3;
-                bitmap.SetPixel(x, y, Color.FromArgb(grey, grey, grey));
+                bitmap.SetPixel(x, y, Color.FromArgb(255 - pixelColor.R, 255 - pixelColor.G, 255 - pixelColor.B));
             }
         }
 
