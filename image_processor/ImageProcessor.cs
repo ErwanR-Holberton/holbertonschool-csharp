@@ -10,7 +10,7 @@ class ImageProcessor
 {
     public static void Inverse(string[] filenames)
     {
-        AsyncFunction(filenames).Wait();
+        AsyncFunction(filenames);
     }
     private static async Task AsyncFunction(string[] filenames)
     {
