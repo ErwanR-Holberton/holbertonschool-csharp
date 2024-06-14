@@ -4,17 +4,22 @@ using System.Drawing.Imaging;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 class ImageProcessor
 {
     public static void Inverse(string[] filenames)
     {
-        Parallel.ForEach(filenames, file_name =>
-        {
-            Thread thread = new Thread(() => ProcessImageThread(file_name));
-            thread.Start();
-        });
+        AsyncFunction(filenames).Wait();
+    }
+    private static async Task AsyncFunction(string[] filenames)
+    {
+        List<Task> tasks = new List<Task>();
 
+        foreach (var file_name in filenames)
+            tasks.Add(Task.Run(() => ProcessImageThread(file_name)));
+
+        await Task.WhenAll(tasks); // Wait for all tasks to complete
     }
     private static void ProcessImageThread(string file_name)
     {
