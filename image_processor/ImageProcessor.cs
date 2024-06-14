@@ -10,14 +10,14 @@ class ImageProcessor
     public static void Inverse(string[] filenames)
     {
 
-        TimeSpan limit = new TimeSpan(0, 0, 0, 39, 0);
+        TimeSpan limit = new TimeSpan(0, 0, 0, 10, 0);
         Stopwatch timer = Stopwatch.StartNew();
         Parallel.ForEach(filenames, file_name =>
         {
             Thread thread = new Thread(() => ProcessImageThread(file_name));
             thread.Start();
         });
-        
+
         while (limit > timer.Elapsed)
         {
 
