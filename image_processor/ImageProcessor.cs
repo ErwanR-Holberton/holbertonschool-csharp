@@ -3,20 +3,24 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Diagnostics;
 
 class ImageProcessor
 {
     public static void Inverse(string[] filenames)
     {
-        var tasks = new Task[filenames.Length];
-
-        for (int i = 0; i < filenames.Length; i++)
+        Parallel.ForEach(filenames, file_name =>
         {
-            string file_name = filenames[i];
-            tasks[i] = Task.Run(() => ProcessImageThread(file_name));
-        }
+            Thread thread = new Thread(() => ProcessImageThread(file_name));
+            thread.Start();
+        });
 
-        Task.WaitAll(tasks);
+        TimeSpan limit = new TimeSpan(0, 0, 0, 39, 0);
+        Stopwatch timer = Stopwatch.StartNew();
+        while (limit > timer.Elapsed)
+        {
+
+        }
 
     }
     private static void ProcessImageThread(string file_name)
