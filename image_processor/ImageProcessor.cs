@@ -10,18 +10,13 @@ class ImageProcessor
 {
     public static void Inverse(string[] filenames)
     {
-        AsyncFunction(filenames);
+        AsyncFunction(filenames).Wait();
     }
     private static async Task AsyncFunction(string[] filenames)
     {
-        List<Task> tasks = new List<Task>();
-
-        foreach (var file_name in filenames)
-            tasks.Add(Task.Run(() => ProcessImageThread(file_name)));
-
-        await Task.WhenAll(tasks); // Wait for all tasks to complete
+        await Task.WhenAll(Array.ConvertAll(filenames, async file => await ProcessImageThread(file)));
     }
-    private static void ProcessImageThread(string file_name)
+    private static async Task ProcessImageThread(string file_name)
     {
         Bitmap bitmap = new Bitmap(file_name);
 
