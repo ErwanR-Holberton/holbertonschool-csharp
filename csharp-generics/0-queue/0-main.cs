@@ -1,5 +1,9 @@
 using System;
 
+/// <summary>
+/// a generic queue
+/// </summary>
+/// <typeparam name="T">The type of elements in the queue.</typeparam>
 class Program
 {
     static void Main(string[] args)
