@@ -2,7 +2,7 @@
 public abstract class Base
 {
     /// <summary> variable </summary>
-    public string name;
+    public string name { get; set; }
     /// <summary> Print name and type </summary>
     public override string ToString()
     {
