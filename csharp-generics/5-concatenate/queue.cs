@@ -115,6 +115,8 @@ public class Queue<T>
 			{
 				result += current.value;
 				current = current.next;
+				if (current != null && typeof(T) == typeof(string))
+					result += " ";
 			}
 			return result;
 		}
