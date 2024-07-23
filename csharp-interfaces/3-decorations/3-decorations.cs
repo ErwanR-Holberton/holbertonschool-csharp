@@ -71,8 +71,6 @@ public class Decoration : Base, IInteractive, IBreakable
 
     /// <summary> durability </summary>
     public int durability { get; set; }
-    /// <summary> isCollected </summary>
-    public bool isCollected { get; set; }
     /// <summary> isQuestItem </summary>
     public bool isQuestItem;
 
@@ -106,10 +104,5 @@ public class Decoration : Base, IInteractive, IBreakable
             Console.WriteLine($"You smash the {name}. What a mess.");
         else
             Console.WriteLine($"The {name} is already broken.");
-    }
-    /// <summary> collect </summary>
-    public void Collect()
-    {
-
     }
 }
