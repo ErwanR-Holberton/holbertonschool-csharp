@@ -52,7 +52,7 @@ public class Queue<T>
 			head = tail = newNode;
 		else
 		{
-			newNode.next = tail;
+			tail.next = newNode;
 			tail = newNode;
 		}
 		count += 1;
