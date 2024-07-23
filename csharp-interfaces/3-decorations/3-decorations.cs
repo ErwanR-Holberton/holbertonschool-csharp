@@ -78,7 +78,7 @@ public class Decoration : Base, IInteractive, IBreakable
     public Decoration(string input_name = "Decoration", int in_dura = 1, bool in_questit = false)
     {
         if (in_dura <= 0)
-            throw new ArgumentException("Durability must be greater than 0");
+            throw new Exception("Durability must be greater than 0");
         name = input_name;
         durability = in_dura;
         isQuestItem = in_questit;
@@ -87,7 +87,7 @@ public class Decoration : Base, IInteractive, IBreakable
     /// <summary> interect </summary>
     public void Interact()
     {
-        if(durability <= 0 )
+        if (durability <= 0)
             Console.WriteLine($"The {name} has been broken.");
         else if (isQuestItem == true)
             Console.WriteLine($"You look at the {name}. There's a key inside.");
