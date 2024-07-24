@@ -8,7 +8,7 @@ public abstract class Base
     /// <summary> Print name and type </summary>
     public override string ToString()
     {
-        return $"{name} is a {GetType().Name}";
+        return $"{name} is a {this.GetType()}";
     }
 }
 /// <summary> interface </summary>
@@ -38,11 +38,6 @@ public interface ICollectable
 public class Door : Base, IInteractive
 {
 
-    /// <summary> durability </summary>
-    public int durability { get; set; }
-    /// <summary> isCollected </summary>
-    public bool isCollected { get; set; }
-
     /// <summary> Constructor </summary>
     public Door(string input_name = "Door")
     {
@@ -53,16 +48,6 @@ public class Door : Base, IInteractive
     public void Interact()
     {
         Console.WriteLine($"You try to open the {name}. It's locked.");
-    }
-    /// <summary> break </summary>
-    public void Break()
-    {
-
-    }
-    /// <summary> collect </summary>
-    public void Collect()
-    {
-
     }
 }
 /// <summary> Decoration class </summary>
@@ -98,7 +83,7 @@ public class Decoration : Base, IInteractive, IBreakable
     public void Break()
     {
         durability -= 1;
-        if(durability > 0 )
+        if (durability > 0)
             Console.WriteLine($"You hit the {name}. It cracks.");
         else if (durability == 0)
             Console.WriteLine($"You smash the {name}. What a mess.");
