@@ -60,13 +60,13 @@ public class Decoration : Base, IInteractive, IBreakable
     public bool isQuestItem;
 
     /// <summary> Constructor </summary>
-    public Decoration(string input_name = "Decoration", int in_dura = 1, bool in_questit = false)
+    public Decoration(string name = "Decoration", int durability = 1, bool isQuestItem = false)
     {
-        if (in_dura <= 0)
+        if (durability <= 0)
             throw new Exception("Durability must be greater than 0");
-        this.name = input_name;
-        this.durability = in_dura;
-        this.isQuestItem = in_questit;
+        this.name = name;
+        this.durability = durability;
+        this.isQuestItem = isQuestItem;
     }
 
     /// <summary> interect </summary>
