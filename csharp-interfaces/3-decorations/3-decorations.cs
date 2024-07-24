@@ -79,9 +79,9 @@ public class Decoration : Base, IInteractive, IBreakable
     {
         if (in_dura <= 0)
             throw new Exception("Durability must be greater than 0");
-        name = input_name;
-        durability = in_dura;
-        isQuestItem = in_questit;
+        this.name = input_name;
+        this.durability = in_dura;
+        this.isQuestItem = in_questit;
     }
 
     /// <summary> interect </summary>
