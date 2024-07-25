@@ -20,7 +20,6 @@ public class Player
     private string name, status;
     private float maxHp, hp;
 
-    private delegate void CalculateHealth(float amount);
     /// <summary> Event with hp </summary>
     public event EventHandler<CurrentHPArgs> HPCheck;
 
