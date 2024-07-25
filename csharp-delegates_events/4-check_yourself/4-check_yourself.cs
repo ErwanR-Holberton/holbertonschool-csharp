@@ -95,15 +95,17 @@ public class Player
         float value = e.CurrentHP;
 
         if (value == maxHp)
-            Console.WriteLine($"{name} is in perfect health!");
+            this.status = $"{name} is in perfect health!";
         else if (this.maxHp / 2 <= value && value < this.maxHp)
-            Console.WriteLine($"{name} is doing well!");
+            this.status = $"{name} is doing well!";
         else if (this.maxHp / 4 <= value && value < this.maxHp / 2)
-            Console.WriteLine($"{name} isn't doing too great...");
+            this.status = $"{name} isn't doing too great...";
         else if (0 < value && value < this.maxHp / 4)
-            Console.WriteLine($"{name} needs help!");
+            this.status = $"{name} needs help!";
         else if (value == 0)
-            Console.WriteLine($"{name} is knocked out!");
+            this.status = $"{name} is knocked out!";
+
+        Console.WriteLine(this.status);
 
     }
 }
