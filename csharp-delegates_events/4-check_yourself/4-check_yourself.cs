@@ -38,7 +38,7 @@ public class Player
         }
         this.hp = this.maxHp;
         this.status = $"{name} is ready to go!";
-        HPCheck += CheckStatus;
+        this.HPCheck += CheckStatus;
     }
 
     /// <summary> Print Health </summary>
@@ -92,18 +92,18 @@ public class Player
     /// <summary> Checks the status </summary>
     private void CheckStatus(object sender, CurrentHPArgs e)
     {
-        float value = e.CurrentHP;
+        float value = e.currentHP;
 
-        if (value == maxHp)
-            this.status = $"{name} is in perfect health!";
+        if (value == this.maxHp)
+            this.status = $"{this.name} is in perfect health!";
         else if (this.maxHp / 2 <= value && value < this.maxHp)
-            this.status = $"{name} is doing well!";
+            this.status = $"{this.name} is doing well!";
         else if (this.maxHp / 4 <= value && value < this.maxHp / 2)
-            this.status = $"{name} isn't doing too great...";
+            this.status = $"{this.name} isn't doing too great...";
         else if (0 < value && value < this.maxHp / 4)
-            this.status = $"{name} needs help!";
+            this.status = $"{this.name} needs help!";
         else if (value == 0)
-            this.status = $"{name} is knocked out!";
+            this.status = $"{this.name} is knocked out!";
 
         Console.WriteLine(this.status);
 
@@ -114,11 +114,11 @@ public class Player
 public class CurrentHPArgs: EventArgs
 {
     /// <summary> Null </summary>
-    public float CurrentHP { get; }
+    public float currentHP { get; }
 
     /// <summary> Update hps </summary>
     public CurrentHPArgs(float newHp)
     {
-        this.CurrentHP = newHp;
+        this.currentHP = newHp;
     }
 }
