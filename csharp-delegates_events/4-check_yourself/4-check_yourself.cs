@@ -20,6 +20,7 @@ public class Player
     private string name, status;
     private float maxHp, hp;
 
+    private delegate void CalculateHealth(float amount);
     /// <summary> Event with hp </summary>
     public event EventHandler<CurrentHPArgs> HPCheck;
 
@@ -91,7 +92,7 @@ public class Player
     /// <summary> Checks the status </summary>
     private void CheckStatus(object sender, CurrentHPArgs e)
     {
-        float value = e.currentHP;
+        float value = e.currentHp;
 
         if (value == this.maxHp)
             this.status = $"{this.name} is in perfect health!";
@@ -113,11 +114,11 @@ public class Player
 public class CurrentHPArgs: EventArgs
 {
     /// <summary> Null </summary>
-    public float currentHP { get; }
+    public float currentHp { get; }
 
     /// <summary> Update hps </summary>
     public CurrentHPArgs(float newHp)
     {
-        this.currentHP = newHp;
+        this.currentHp = newHp;
     }
 }
