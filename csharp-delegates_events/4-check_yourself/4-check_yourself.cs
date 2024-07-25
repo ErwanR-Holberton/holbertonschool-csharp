@@ -70,7 +70,7 @@ public class Player
     {
         if (newHp < 0)
             this.hp = 0;
-        else if (newHp > maxHp)
+        else if (newHp > this.maxHp)
             this.hp = this.maxHp;
         else
             this.hp = newHp;
@@ -80,18 +80,19 @@ public class Player
     /// <summary> Apply </summary>
     public float ApplyModifier(float baseValue, Modifier modifier)
     {
-        if (modifier is Modifier.Weak)
+        if (modifier == Modifier.Weak)
             return baseValue / 2;
-        else if (modifier is Modifier.Base)
+        else if (modifier == Modifier.Base)
             return baseValue;
-        else
+        else if (modifier == Modifier.Strong)
             return baseValue * 1.5f;
+        return 0f;
     }
 
     /// <summary> Checks the status </summary>
     private void CheckStatus(object sender, CurrentHPArgs e)
     {
-        float value = this.hp;
+        float value = e.CurrentHP;
 
         if (value == maxHp)
             Console.WriteLine($"{name} is in perfect health!");
@@ -111,7 +112,7 @@ public class Player
 public class CurrentHPArgs: EventArgs
 {
     /// <summary> Null </summary>
-    public float CurrentHP;
+    public float CurrentHP { get; }
 
     /// <summary> Update hps </summary>
     public CurrentHPArgs(float newHp)
