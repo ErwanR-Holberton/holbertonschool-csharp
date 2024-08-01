@@ -4,7 +4,7 @@ namespace InventoryLibrary
 {
 	public class JSONStorage
 	{
-		private string path = "DB.json";
+		private string path = "storage/inventory_manager.json";
 		public Dictionary<string, object> objects = new Dictionary<string, object>();
 
 		public Dictionary<string, object> All()
