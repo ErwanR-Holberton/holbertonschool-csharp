@@ -1,1 +1,10 @@
-
+{
+  "Inventory.a1bd75c7-4461-4da0-b741-b79f6a51e56b": {
+    "UserId": null,
+    "ItemId": null,
+    "Quantity": 0,
+    "id": "a1bd75c7-4461-4da0-b741-b79f6a51e56b",
+    "date_created": "2024-08-03T10:26:31.5090132+02:00",
+    "date_updated": "2024-08-03T10:26:31.5090165+02:00"
+  }
+}
