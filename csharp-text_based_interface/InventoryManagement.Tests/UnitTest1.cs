@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using InventoryLibrary;
 
-namespace Tests
+namespace InventoryManagement.Tests 
 {
     public class Tests
     {
