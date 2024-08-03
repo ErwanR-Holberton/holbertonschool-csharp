@@ -32,7 +32,7 @@ namespace InventoryManager
             MethodInfo methodInfo = type.GetMethod(command[0]);
 
             if (methodInfo == null)
-                Console.WriteLine("Wrong command");
+                {Console.WriteLine("Wrong command"); return; }
 
             object[] parameters = new object[] { storage };
 
@@ -83,6 +83,7 @@ namespace InventoryManager
 
             storage.New((BaseClass)Activator.CreateInstance(t));
             storage.Save();
+            Console.WriteLine("OK");
         }
 
         public void Show(JSONStorage storage, string type, string id)
@@ -98,6 +99,7 @@ namespace InventoryManager
             {
                 base_obj.date_updated = DateTime.Now;
                 storage.Save();
+                Console.WriteLine("OK");
             }
         }
 
