@@ -4,6 +4,6 @@ namespace InventoryLibrary
 {
 	public class User: BaseClass
 	{
-		public string name;
+		public string name { get; set; }
 	}
 }

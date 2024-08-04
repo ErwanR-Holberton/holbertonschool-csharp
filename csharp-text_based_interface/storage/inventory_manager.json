@@ -1,16 +1,45 @@
 {
   "Inventory.a1bd75c7-4461-4da0-b741-b79f6a51e56b": {
-    "UserId": null,
-    "ItemId": null,
-    "Quantity": 0,
     "id": "a1bd75c7-4461-4da0-b741-b79f6a51e56b",
     "date_created": "2024-08-03T10:26:31.5090132+02:00",
-    "date_updated": "2024-08-03T10:26:31.5090165+02:00"
+    "date_updated": "2024-08-03T10:26:31.5090165+02:00",
+    "user_id": null,
+    "item_id": null,
+    "Quantity": 0
   },
-  "User.0d62024d-436e-41e6-a408-39cd5bc80c11": {
-    "name": null,
-    "id": "0d62024d-436e-41e6-a408-39cd5bc80c11",
-    "date_created": "2024-08-03T16:25:45.4068082+02:00",
-    "date_updated": "2024-08-03T16:25:45.4068204+02:00"
+  "User.dc62bbdb-15be-4746-a204-de57127a9700": {
+    "id": "dc62bbdb-15be-4746-a204-de57127a9700",
+    "date_created": "2024-08-04T10:21:23.9144231+02:00",
+    "date_updated": "2024-08-04T10:21:23.9144263+02:00",
+    "name": "peter"
+  },
+  "User.40ba8c3e-da75-4267-89d2-738664b67e0f": {
+    "id": "40ba8c3e-da75-4267-89d2-738664b67e0f",
+    "date_created": "2024-08-04T10:22:36.9802436+02:00",
+    "date_updated": "2024-08-04T10:22:36.9802474+02:00",
+    "name": "KEKE"
+  },
+  "User.648b07b2-0780-4abf-9524-4ff37c53dbab": {
+    "id": "648b07b2-0780-4abf-9524-4ff37c53dbab",
+    "date_created": "2024-08-04T11:14:37.6744248+02:00",
+    "date_updated": "2024-08-04T11:14:37.6744287+02:00",
+    "name": "Gael"
+  },
+  "Item.1cb76e1b-e444-493b-a739-b67da504c2df": {
+    "id": "1cb76e1b-e444-493b-a739-b67da504c2df",
+    "date_created": "2024-08-04T11:15:19.4739564+02:00",
+    "date_updated": "2024-08-04T11:15:19.47396+02:00",
+    "name": "sword",
+    "description": null,
+    "price": 0.0,
+    "Tags": null
+  },
+  "Inventory.ec992328-87ec-4776-a456-b13fa6a4ad73": {
+    "id": "ec992328-87ec-4776-a456-b13fa6a4ad73",
+    "date_created": "2024-08-04T11:24:30.6897104+02:00",
+    "date_updated": "2024-08-04T11:24:30.6897169+02:00",
+    "user_id": "648b07b2-0780-4abf-9524-4ff37c53dbab",
+    "item_id": "1cb76e1b-e444-493b-a739-b67da504c2df",
+    "Quantity": 5
   }
 }
